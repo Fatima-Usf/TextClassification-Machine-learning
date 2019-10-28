@@ -23,3 +23,7 @@ print("features names: "+str(counter.get_feature_names()))
 counts = counter.transform(text)
 print("Counts shape :"+str(counts.shape))
 print("Counts:"+str(counts.toarray())) """
+
+counterV = CountVectorizer()
+x_train = count_vect.fit_transform(data_train)
+x_train.shape
