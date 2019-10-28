@@ -8,7 +8,7 @@ data_train = skd.load_files('/Users/mac/Documents/Coding/ML/Bays/20news-bydate/2
 data_test = skd.load_files('/Users/mac/Documents/Coding/ML/Bays/20news-bydate/20news-bydate-test',categories= categories, encoding= 'ISO-8859-1')
 
 
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer, TfidTransformer
 
 """ a little example to understand the methods M using
 text = ["I love cats more than anyone in the world.",
@@ -27,3 +27,7 @@ print("Counts:"+str(counts.toarray())) """
 counterV = CountVectorizer()
 x_train = count_vect.fit_transform(data_train)
 x_train.shape
+
+transformer =TfidTransformer()
+x_trainTfid = transformer.fit_transform(x_train)
+x_trainTfid.shape
