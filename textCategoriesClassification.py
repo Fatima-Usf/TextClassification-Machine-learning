@@ -10,6 +10,7 @@ data_test = skd.load_files('/Users/mac/Documents/Coding/ML/Bays/20news-bydate/20
 
 from sklearn.feature_extraction.text import CountVectorizer
 
+""" a little example to understand the methods M using
 text = ["I love cats more than anyone in the world.",
         "The cat.",
         "world"]
@@ -21,4 +22,4 @@ print("features names: "+str(counter.get_feature_names()))
 
 counts = counter.transform(text)
 print("Counts shape :"+str(counts.shape))
-print("Counts:"+str(counts.toarray()))
+print("Counts:"+str(counts.toarray())) """
