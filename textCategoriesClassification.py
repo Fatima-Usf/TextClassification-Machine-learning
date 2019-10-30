@@ -28,12 +28,12 @@ print("Counts:"+str(counts.toarray())) """
 
 
 counterV = CountVectorizer()
-x_train = count_vect.fit_transform(data_train)
+x_train = counterV.fit_transform(data_train)
 x_train.shape
 
 from sklearn.feature_extraction.text import TfidTransformer
 
-transformer =TfidTransformer()
+transformer = TfidTransformer()
 x_trainTfid = transformer.fit_transform(x_train)
 x_trainTfid.shape
 
@@ -43,7 +43,7 @@ clf = MultinomialNB().fit(x_trainTfid, x_train)
 #Teste
 x_teste = counterV.transform(data_test.data)
 x_testeTfid = transformer(x_teste)
-
+predicted = mod.predicted(x_testeTfid)
 
 
 vectorizer.fit(counts)
