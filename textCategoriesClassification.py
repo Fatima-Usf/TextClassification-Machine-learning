@@ -12,10 +12,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 """ a little example to understand the methods M using"""
 
-
+#my text
 text = ["I love cats more than anyone in the world.",
         "The cat.",
         "world"]
+#give a unique id for every word and then count how much this id is frequent in each catégori
 counter = CountVectorizer()
 counter.fit(text)
 print("Vocabulary "+str(counter.vocabulary_))
