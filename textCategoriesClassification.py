@@ -7,10 +7,9 @@ categories = ['talk.politics.misc', 'rec.sport.baseball','comp.graphics', 'sci.e
 data_train = skd.load_files('/Users/mac/Documents/Coding/ML/Bays/20news-bydate/20news-bydate-train', categories= categories, encoding= 'ISO-8859-1')
 data_test = skd.load_files('/Users/mac/Documents/Coding/ML/Bays/20news-bydate/20news-bydate-test',categories= categories, encoding= 'ISO-8859-1')
 
-
 from sklearn.feature_extraction.text import CountVectorizer
 
-""" a little example to understand the methods M using"""
+""" a little example to understand the methods M using
 
 #my text
 text = ["I love cats more than anyone in the world.",
@@ -25,7 +24,7 @@ print("features names: "+str(counter.get_feature_names()))
 
 counts = counter.transform(text)
 print("Counts shape :"+str(counts.shape))
-print("Counts:"+str(counts.toarray()))
+print("Counts:"+str(counts.toarray())) """
 
 
 counterV = CountVectorizer()
@@ -41,6 +40,9 @@ x_trainTfid.shape
 from sklearn.naive_bayes import MultinomialNB
 clf = MultinomialNB().fit(x_trainTfid, x_train)
 
+#Teste
+x_teste = counterV.transform(data_test.data)
+x_testeTfid = transformer(x_teste)
 
 
 
