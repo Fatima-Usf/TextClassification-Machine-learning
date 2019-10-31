@@ -42,8 +42,13 @@ clf = MultinomialNB().fit(x_trainTfid, x_train)
 
 #Teste
 x_teste = counterV.transform(data_test.data)
-x_testeTfid = transformer(x_teste)
-predicted = mod.predicted(x_testeTfid)
+x_testeTfid = transformer.transform(x_teste)
+predicted = clf.predict(x_testeTfid)
+
+from sklearn import metrics
+from sklearn.metrics import accuracy_score
+print("Accuray:", accuracy_score(data_test.target, predicted))
+print(metrics.classification_report(data_test.target, predicted, target_names=data_test.target_names))
 
 
 vectorizer.fit(counts)
